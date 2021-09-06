@@ -1,4 +1,4 @@
-import { SHOW_DATA, } from "./action"
+import { FILTER, SHOW_DATA, } from "./action"
 
 const intialState = {
     fetchData: [],
@@ -13,6 +13,12 @@ export const Animal = (state = intialState, action) => {
                 ...state,
                 fetchData: action.payload
             };
+
+        case FILTER:
+            return {
+                ...state,
+                fetchData: action.payload.fetchData
+            }
 
         default:
             return state;
